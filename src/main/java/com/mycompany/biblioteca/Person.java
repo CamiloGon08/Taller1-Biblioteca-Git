@@ -27,15 +27,15 @@ public abstract class Person {
         return name;
     }
     
-    public void setNombre(String name){
+    public void setName(String name){
         this.name=name;
     }
     
-    public String getTelefono(){
+    public String getPhone(){
         return phone;
     }
     
-    public void setTelefono(String phone){
+    public void setPhone(String phone){
         this.phone=phone;
     }
     
