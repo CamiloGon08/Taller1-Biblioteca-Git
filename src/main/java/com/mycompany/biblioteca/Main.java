@@ -32,5 +32,25 @@ public class Main {
         System.out.println("Client registered successfully");
     }
     
+    //READ(List)
+    public static void listClients(){
+        System.out.println("\n   CLIENT LIST   ");
+        if(clients.isEmpty()){
+            System.out.println("No clients registered");
+        }else{
+            for(Client c:clients){
+                System.out.println(c);
+            }
+        }
+    }
     
+    //READ(search)
+    public static Client searchClient(String id){
+        for (Client c:clients){
+            if(c.getId().equalsIgnoreCase(id)){
+                return c;
+            }
+        }
+        return null;
+    }
 }
