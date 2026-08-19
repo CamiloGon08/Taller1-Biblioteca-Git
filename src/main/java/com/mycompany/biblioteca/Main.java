@@ -223,4 +223,28 @@ public class Main {
 
         System.out.println("Loan registered successfully.");
     }
+    
+    public static void returnLoan() {
+        System.out.println("\n   RETURN LOAN     ");
+        System.out.print("Enter Loan ID: ");
+        String loanId = sc.nextLine();
+
+        Loan targetLoan = null;
+        for (Loan l : loans) {
+            if (l.getLoanId().equalsIgnoreCase(loanId) && l.getStatus().equalsIgnoreCase("Active")) {
+                targetLoan = l;
+                break;
+            }
+        }
+
+        if (targetLoan != null) {
+            targetLoan.setStatus("Returned");
+            targetLoan.getBook().setAvailable(true);
+            System.out.println("Loan returned successfully. Book is now available.");
+        } else {
+            System.out.println("Active loan not found with the provided ID.");
+        }
+    }
+    
+    
 }
