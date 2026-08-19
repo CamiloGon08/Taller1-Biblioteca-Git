@@ -5,8 +5,8 @@ public class Client extends Person {
     
    private String email;
    
-   public Client(String id, String nombre, String telefono, String email){
-       super(id,nombre,telefono);
+   public Client(String id, String name, String phone, String email){
+       super(id,name,phone);
        this.email=email;
    }
    
@@ -18,7 +18,7 @@ public class Client extends Person {
        this.email=email;
    }
    
-   @override 
+   @Override 
    public String toString(){
        return super.toString()+ ", Email: "+email;
    }
