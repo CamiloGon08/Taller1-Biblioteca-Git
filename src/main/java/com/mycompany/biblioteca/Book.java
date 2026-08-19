@@ -87,4 +87,21 @@ public class Book extends Material{
             System.out.println(" Book not found.");
         }
     }
+    
+    
+    public static void deleteBook() {
+        System.out.println("    DELETE BOOK   ");
+        System.out.print("Enter the Code of the book to delete: ");
+        String code = sc.nextLine();
+        
+        Book b = searchBook(code);
+        if (b != null) {
+            books.remove(b);
+            System.out.println("Book deleted successfully.");
+        } else {
+            System.out.println("Book not found.");
+        }
+    }
+    
+    
 }
