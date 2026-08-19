@@ -91,4 +91,27 @@ public class Main {
             System.out.println("Client not found");
         }
     }
+    
+    static ArrayList<Book> books = new ArrayList<>();
+    
+    
+    public static void createBook(){
+        System.out.println("\n  REGISTER BOOK   ");
+        System.out.print("Enter Book Code: ");
+        String code = sc.nextLine();
+        
+        System.out.print("Enter Title: ");
+        String title = sc.nextLine();
+        
+        System.out.print("Enter Publication Year: ");
+        String publicationYear = sc.nextLine();
+        
+        System.out.print("Enter Author: ");
+        String author = sc.nextLine();
+
+        Book newBook = new Book(code, title, publicationYear, author, true);
+        books.add(newBook);
+        
+        System.out.println("Book registered successfully.");
+    }
 }
