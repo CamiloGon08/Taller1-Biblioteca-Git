@@ -184,4 +184,43 @@ public class Main {
             System.out.println("Book not found.");
         }
     }
+    
+    static ArrayList<Loan> loans = new ArrayList<>();
+    
+    // REGISTER LOAN
+    public static void createLoan() {
+        System.out.println("\n   REGISTER LOAN    ");
+        
+        System.out.print("Enter Client ID: ");
+        String clientId = sc.nextLine();
+        Client client = searchClient(clientId);
+        
+        if (client == null) {
+            System.out.println("Client not found. Cannot process loan.");
+            return;
+        }
+
+        System.out.print("Enter Book Code: ");
+        String bookCode = sc.nextLine();
+        Book book = searchBook(bookCode);
+
+        if (book == null) {
+            System.out.println("Book not found. Cannot process loan.");
+            return;
+        }
+
+        if (!book.isAvailable()) {
+            System.out.println("The book is currently not available for loan.");
+            return;
+        }
+
+        System.out.print("Enter Loan ID: ");
+        String loanId = sc.nextLine();
+
+        book.setAvailable(false);
+        Loan newLoan = new Loan(loanId, client, book, LocalDate.now(), "Active");
+        loans.add(newLoan);
+
+        System.out.println("Loan registered successfully.");
+    }
 }
