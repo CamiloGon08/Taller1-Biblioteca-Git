@@ -8,7 +8,7 @@ public abstract class Material {
     
     public Material(String code, String title, String publicationYear){
         this.code=code;
-        this.tittle=title;
+        this.title=title;
         this.publicationYear=publicationYear;
     }
     
