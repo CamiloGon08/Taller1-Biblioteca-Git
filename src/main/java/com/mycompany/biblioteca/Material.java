@@ -1,10 +1,10 @@
 
 package com.mycompany.biblioteca;
 
-public class Material {
-    private String code;
-    private String title;
-    private String publicationYear;
+public abstract class Material {
+    protected String code;
+    protected String title;
+    protected String publicationYear;
     
     public Material(String code, String title, String publicationYear){
         this.code=code;
@@ -39,6 +39,6 @@ public class Material {
 
     @Override
     public String toString() {
-        return "Code: " + code + " | Title: " + title + " | Year: " + publicationYear;
+        return "Code: " + code + "  Title: " + title + "  Year: " + publicationYear;
     }
 }
