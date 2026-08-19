@@ -53,4 +53,27 @@ public class Main {
         }
         return null;
     }
+    
+    //UPDATE
+    public static void updateClient(){
+        System.out.println("\n   UPDATE CLIENT  ");
+        System.out.print("Enter the ID of the client to update: ");
+        String id=sc.nextLine();
+        
+        Client c = searchClient(id);
+        if (c!=null){
+            System.out.print("New name (current: "+c.getName()+ "): ");
+            c.setName(sc.nextLine());
+            
+            System.out.print("New phone (current: "+ c.getPhone()+"): ");
+            c.setPhone(sc.nextLine());
+            
+            System.out.print("New Email (current: "+c.getEmail()+ "): ");
+            c.setEmail(sc.nextLine());
+            
+            System.out.print("Client Upddate Successfully");
+        }else{
+            System.out.println ("Client not found");
+        }
+    }
 }
