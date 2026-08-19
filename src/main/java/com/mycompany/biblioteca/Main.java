@@ -114,4 +114,81 @@ public class Main {
         
         System.out.println("Book registered successfully.");
     }
+    
+    
+    public static void main(String[] args) {
+        int option;
+        do {
+            System.out.println("\n===== LIBRARY MANAGEMENT SYSTEM =====");
+            System.out.println("1. Create client");
+            System.out.println("2. List clients");
+            System.out.println("3. Search client");
+            System.out.println("4. Update client");
+            System.out.println("5. Delete client");
+            System.out.println("6. Create book");
+            System.out.println("7. List books");
+            System.out.println("8. Search book");
+            System.out.println("9. Update book");
+            System.out.println("10. Delete book");
+            System.out.println("11. Register loan");
+            System.out.println("12. Register return");
+            System.out.println("13. List active loans");
+            System.out.println("0. Exit");
+            System.out.print("Select an option: ");
+
+            option = Integer.parseInt(sc.nextLine());
+
+            switch (option) {
+                case 1:
+                    createClient();
+                    break;
+                case 2:
+                    listClients();
+                    break;
+                case 3:
+                    searchClient(promptId());
+                    break;
+                case 4:
+                    updateClient();
+                    break;
+                case 5:
+                    deleteClient();
+                    break;
+                case 6:
+                    createBook();
+                    break;
+                case 7:
+                    listBooks();
+                    break;
+                case 8:
+                    searchBook(promptId());
+                    break;
+                case 9:
+                    updateBook();
+                    break;
+                case 10:
+                    deleteBook();
+                    break;
+                case 11:
+                    createLoan();
+                    break;
+                case 12:
+                    returnLoan();
+                    break;
+                case 13:
+                    listActiveLoans();
+                    break;
+                case 0:
+                    System.out.println("Goodbye!");
+                    break;
+                default:
+                    System.out.println("Invalid option, try again.");
+            }
+        } while (option != 0);
+    }
+
+    private static String promptId() {
+        System.out.print("Enter ID: ");
+        return sc.nextLine();
+    }
 }
