@@ -65,4 +65,26 @@ public class Book extends Material{
             System.out.println(" Book not found.");
         }
     }
+    
+    public static void updateBook(){
+        System.out.println("\n   UPDATE BOOK    ");
+        System.out.print("Enter the code of the book to update: ");
+        String code = sc.nextLine();
+        
+        Book b = searchBook(code);
+        if (b != null) {
+            System.out.print("New Title (current: " + b.getTitle() + "): ");
+            b.setTitle(sc.nextLine());
+            
+            System.out.print("New Publication Year (current: " + b.getPublicationYear() + "): ");
+            b.setPublicationYear(sc.nextLine());
+            
+            System.out.print("New Author (current: " + b.getAuthor() + "): ");
+            b.setAuthor(sc.nextLine());
+            
+            System.out.println(" Book updated successfully.");
+        } else {
+            System.out.println(" Book not found.");
+        }
+    }
 }
